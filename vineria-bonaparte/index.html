@@ -41,6 +41,25 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
 .griglia .riga{flex-wrap:wrap}.griglia .punti{display:none}.griglia .prezzo{width:100%;color:var(--p)}
 .foto{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin-bottom:6px}
 .compatto .piatto{padding:5px 0}.compatto .desc{display:none}.compatto .cat h2{font-size:1.2rem}
+.elegante{padding:0 22px calc(40px + env(safe-area-inset-bottom,0px))}
+.elegante header{border-bottom:0;padding-bottom:6px}
+.elegante header::after{content:"◆";display:block;color:var(--p);font-size:.7rem;margin-top:20px}
+.elegante .logo{max-height:150px;max-width:80%;margin-bottom:6px}
+.elegante header h1{letter-spacing:.04em}
+.elegante nav{justify-content:safe center;gap:20px;border-bottom:1px solid color-mix(in srgb,var(--p) 35%,transparent)}
+.elegante nav a{border:0;border-radius:0;padding:6px 0;text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;opacity:.85}
+.elegante .cat{padding-top:36px}
+.elegante .cat h2{display:flex;align-items:center;gap:14px;font-family:var(--fc);font-size:.9rem;font-weight:600;text-transform:uppercase;letter-spacing:.24em}
+.elegante .cat h2::before,.elegante .cat h2::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--p) 45%,transparent)}
+.elegante .cat-desc{text-align:center;font-style:italic}
+.elegante .piatto{border-bottom:0;padding:12px 0}
+.elegante .riga{justify-content:space-between}
+.elegante .riga h3{font-family:var(--ft);font-size:1.3rem;font-weight:400;letter-spacing:.01em}
+.elegante .prezzo{color:var(--p);font-weight:600;margin-left:auto}
+.elegante .desc{font-style:italic}
+.elegante .etichette li{background:transparent;color:var(--p);border:1px solid currentColor;font-weight:600}
+.elegante .badge{background:var(--a)}
+.elegante footer{border-top:1px solid color-mix(in srgb,var(--p) 35%,transparent);padding-top:18px;letter-spacing:.05em}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 </head>
