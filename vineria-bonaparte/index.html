@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menu · Enotechia</title>
+<meta name="description" content="Menu di Enotechia">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif:wght@400;700&family=Figtree:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#1F4FA8;--a:#F2C230;--s:#F2F5F8;--t:#13233A;--ft:"Young Serif", Georgia, serif;--fc:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif}
+*{box-sizing:border-box}
+html{scroll-padding-top:56px}
+body{margin:0;background:var(--s);color:var(--t);font:16px/1.5 var(--fc);-webkit-font-smoothing:antialiased}
+.menu{max-width:720px;margin:0 auto;padding:0 18px calc(30px + env(safe-area-inset-bottom,0px))}
+header{text-align:center;padding:calc(28px + env(safe-area-inset-top,0px)) 0 16px;border-bottom:6px double var(--p)}
+header h1{font-family:var(--ft);font-weight:400;font-size:clamp(1.9rem,7vw,2.8rem);line-height:1.1;margin:0}
+header p{margin:6px 0 0;opacity:.75}
+.logo{max-height:72px;max-width:70%;margin-bottom:10px}
+nav{position:sticky;top:0;display:flex;gap:6px;overflow-x:auto;padding:10px 0;background:var(--s);z-index:2;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;border:1px solid color-mix(in srgb,var(--t) 25%,transparent);border-radius:999px;padding:5px 12px;color:inherit;text-decoration:none;font-weight:600;font-size:.9rem}
+.cat{padding-top:18px}
+.cat h2{font-family:var(--ft);font-weight:400;color:var(--p);font-size:1.5rem;margin:0}
+.cat-desc{margin:2px 0 6px;opacity:.75}
+.piatto{padding:10px 0;border-bottom:1px dashed color-mix(in srgb,var(--t) 22%,transparent)}
+.riga{display:flex;align-items:baseline;gap:8px}
+.riga h3{margin:0;font-size:1.02rem}
+.punti{flex:1;border-bottom:2px dotted color-mix(in srgb,var(--t) 25%,transparent);transform:translateY(-4px);min-width:12px}
+.prezzo{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.desc{margin:3px 0 0;opacity:.78;font-size:.93rem}
+.etichette{list-style:none;display:flex;flex-wrap:wrap;gap:4px;padding:0;margin:5px 0 0}
+.etichette li{font-size:.72rem;font-weight:700;background:var(--a);color:#13233A;border-radius:6px;padding:1px 7px}
+.allergeni{margin:4px 0 0;font-size:.78rem;opacity:.7}
+.esaurito h3,.esaurito .prezzo{text-decoration:line-through;opacity:.55}
+.badge{font-size:.7rem;font-weight:700;background:#B3261E;color:#fff;border-radius:6px;padding:1px 6px}
+.vuoto{text-align:center;opacity:.7;padding:40px 0}
+footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
+.griglia .piatti{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.griglia .piatto{border:1px solid color-mix(in srgb,var(--t) 15%,transparent);border-radius:12px;padding:10px}
+.griglia .riga{flex-wrap:wrap}.griglia .punti{display:none}.griglia .prezzo{width:100%;color:var(--p)}
+.foto{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin-bottom:6px}
+.compatto .piatto{padding:5px 0}.compatto .desc{display:none}.compatto .cat h2{font-size:1.2rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="menu lista">
+  <header>
+    
+    <h1>Enotechia</h1>
+    
+  </header>
+  <nav aria-label="Categorie"><a href="#c-246c8d2d-691b-4297-b4fa-80f8d1db1037">Pizze</a><a href="#c-0c77ff83-b27d-45bb-b621-ed5f563c42d3">Vini</a></nav>
+  
+    <section class="cat" id="c-246c8d2d-691b-4297-b4fa-80f8d1db1037">
+      <h2>Pizze</h2>
+      
+      <div class="piatti">
+        <article class="piatto">
+          
+          <div class="riga"><h3>Margherita</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">7,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto">
+          
+          <div class="riga"><h3>Marinara</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">5,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto esaurito">
+          
+          <div class="riga"><h3>Pizza del mese</h3><span class="badge">Esaurito</span><span class="punti" aria-hidden="true"></span><span class="prezzo">0,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto">
+          
+          <div class="riga"><h3>Pizza diavola</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">7,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto">
+          
+          <div class="riga"><h3>Pizza Salame Dolce</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">15,00 €</span></div>
+          
+          
+          
+        </article>
+      </div>
+    </section>
+    <section class="cat" id="c-0c77ff83-b27d-45bb-b621-ed5f563c42d3">
+      <h2>Vini</h2>
+      
+      <div class="piatti">
+        <article class="piatto">
+          
+          <div class="riga"><h3>Sassicaia</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">380,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto">
+          
+          <div class="riga"><h3>Lambrusco</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">50,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto">
+          
+          <div class="riga"><h3>Nuovo piatto</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">0,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto">
+          
+          <div class="riga"><h3>Champagne</h3><span class="punti" aria-hidden="true"></span><span class="prezzo">100,00 €</span></div>
+          
+          
+          
+        </article>
+        <article class="piatto esaurito">
+          
+          <div class="riga"><h3>Falanghina mastroberardino</h3><span class="badge">Esaurito</span><span class="punti" aria-hidden="true"></span><span class="prezzo">17,00 €</span></div>
+          
+          
+          
+        </article>
+      </div>
+    </section>
+  <footer>
+    <p>Coperto 2 €</p>
+    <p>Per informazioni sugli allergeni rivolgersi al personale.</p>
+    <p>Aggiornato il 28/10/26, 17:11</p>
+  </footer>
+</div>
+</body>
+</html>
