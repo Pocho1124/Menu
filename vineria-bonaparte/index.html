@@ -75,6 +75,20 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
 .scheda-corpo .prezzo{color:var(--p);font-size:1.15rem}
 .scheda-corpo p{margin:0}
 .scheda-chiudi{position:absolute;top:10px;right:10px;z-index:1;width:36px;height:36px;border-radius:999px;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer}
+.trova-vino{display:block;margin:14px auto 0;border:1px solid var(--p);background:transparent;color:var(--p);border-radius:999px;padding:8px 18px;font:600 .9rem var(--fc);letter-spacing:.04em;cursor:pointer}
+.vino-info{margin:3px 0 0;font-size:.8rem;letter-spacing:.05em;color:var(--p)}
+.abbinamento{margin:4px 0 0;font-size:.82rem;font-style:italic;opacity:.85}
+.scheda-vino{color:var(--p);font-weight:600;letter-spacing:.04em}
+.quiz-passo{margin:0;font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--p)}
+.quiz-scelte{display:grid;gap:8px}
+.quiz-scelta{border:1px solid color-mix(in srgb,var(--t) 30%,transparent);background:transparent;color:var(--t);border-radius:12px;padding:12px 14px;font:500 1rem var(--fc);text-align:left;cursor:pointer}
+.quiz-scelta:hover{border-color:var(--p);background:color-mix(in srgb,var(--p) 12%,transparent)}
+.quiz-vino{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid color-mix(in srgb,var(--p) 40%,transparent);background:transparent;color:var(--t);border-radius:12px;padding:10px 12px;cursor:pointer;font-family:var(--fc)}
+.quiz-posizione{flex:none;width:28px;height:28px;border-radius:999px;display:grid;place-items:center;background:var(--p);color:var(--s);font-weight:700}
+.quiz-dati{display:grid;gap:2px;flex:1;min-width:0}
+.quiz-dati strong{font-family:var(--ft);font-weight:400;font-size:1.1rem}
+.quiz-info{font-size:.8rem;color:var(--p)}
+.quiz-perche{font-size:.8rem;font-style:italic;opacity:.8}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 </head>
@@ -86,16 +100,19 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
     
     
   </header>
+  
   <nav aria-label="Categorie"><a href="#c-31fe95dd-9964-47d5-bcdf-f09b3b934b92">Carta dei vini</a><a href="#c-b85f5233-104c-41a1-8c2c-e2617e5f218c">Taglieri</a><a href="#c-f030bc13-c8e1-4bf6-9788-caed4c0b8c36">Pinse</a></nav>
   
     <section class="cat" id="c-31fe95dd-9964-47d5-bcdf-f09b3b934b92">
       <h2>Carta dei vini</h2>
       
       <div class="piatti">
-        <article class="piatto esaurito apribile" tabindex="0" role="button" data-nome="Aglianico" data-prezzo="16,00 €" data-desc="Vino corposo e ben strutturato" data-allergeni="" data-foto="foto/2f1ad702-8cf2-4f0b-ab6c-a80f24216841.jpg?v=1793208375">
+        <article class="piatto esaurito apribile" tabindex="0" role="button" data-id="2f1ad702-8cf2-4f0b-ab6c-a80f24216841">
           
           <div class="riga"><h3>Aglianico<span class="icona-foto" aria-hidden="true"> ◉</span></h3><span class="badge">Esaurito</span><span class="prezzo">16,00 €</span></div>
+          
           <p class="desc">Vino corposo e ben strutturato</p>
+          
           
           
         </article>
@@ -105,10 +122,14 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
           
           
           
+          
+          
         </article>
         <article class="piatto">
           
           <div class="riga"><h3>Feudi di Sangregorio</h3><span class="prezzo">18,00 €</span></div>
+          
+          
           
           
           
@@ -125,10 +146,14 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
           
           
           
+          
+          
         </article>
         <article class="piatto">
           
           <div class="riga"><h3>Tagliere di salumi e formaggi</h3><span class="prezzo">25,00 €</span></div>
+          
+          
           
           
           
@@ -145,12 +170,14 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
           
           
           
+          
+          
         </article>
       </div>
     </section>
   <div class="scheda-sfondo" hidden><div class="scheda" role="dialog" aria-modal="true">
     <button class="scheda-chiudi" aria-label="Chiudi">×</button><img class="scheda-foto" alt="" hidden>
-    <div class="scheda-corpo"><div class="riga"><h3></h3><span class="prezzo"></span></div><p class="desc"></p><p class="allergeni"></p></div>
+    <div class="scheda-corpo"></div>
   </div></div>
   <footer>
     <p>Coperto 2 €</p>
@@ -158,24 +185,100 @@ footer{margin-top:26px;font-size:.82rem;opacity:.7;text-align:center}
     <p>Aggiornato il 31/10/26, 09:00</p>
   </footer>
 </div>
+<script type="application/json" id="dati">{"versione":"1790ee76171d","foto":{"2f1ad702-8cf2-4f0b-ab6c-a80f24216841":"foto/2f1ad702-8cf2-4f0b-ab6c-a80f24216841.jpg?v=1793208375"},"categorie":[{"id":"31fe95dd-9964-47d5-bcdf-f09b3b934b92","nome":"Carta dei vini","prodotti":[{"id":"2f1ad702-8cf2-4f0b-ab6c-a80f24216841","foto":1793208375,"nome":"Aglianico","vino":null,"opzioni":[],"allergeni":[],"etichette":[],"abbinamenti":[],"descrizione":"Vino corposo e ben strutturato","disponibile":false,"prezzo_cent":1600,"immagine_url":null},{"id":"116cc2fd-864a-407a-a477-6e1c91e8070b","foto":null,"nome":"Falanghina del Sannio","vino":null,"opzioni":[],"allergeni":[],"etichette":[],"abbinamenti":[],"descrizione":"","disponibile":true,"prezzo_cent":1600,"immagine_url":null},{"id":"909db211-4c15-4f57-b25d-2e51a16c198a","foto":null,"nome":"Feudi di Sangregorio","vino":null,"opzioni":[],"allergeni":[],"etichette":[],"abbinamenti":[],"descrizione":"","disponibile":true,"prezzo_cent":1800,"immagine_url":null}],"descrizione":""},{"id":"b85f5233-104c-41a1-8c2c-e2617e5f218c","nome":"Taglieri","prodotti":[{"id":"84d159a8-670d-4b49-ad21-d5ee1df9553b","foto":null,"nome":"Tagliere Formaggi Stagionati","vino":null,"opzioni":[],"allergeni":[],"etichette":[],"abbinamenti":[],"descrizione":"","disponibile":true,"prezzo_cent":1700,"immagine_url":null},{"id":"34040e74-ed31-4f4e-9473-b8e8a53af65f","foto":null,"nome":"Tagliere di salumi e formaggi","vino":null,"opzioni":[],"allergeni":[],"etichette":[],"abbinamenti":[],"descrizione":"","disponibile":true,"prezzo_cent":2500,"immagine_url":null}],"descrizione":""},{"id":"f030bc13-c8e1-4bf6-9788-caed4c0b8c36","nome":"Pinse","prodotti":[{"id":"5f5e732d-b685-458e-a8a0-e2d417d7f847","foto":null,"nome":"Pinsa speck brie fichi e noci","vino":null,"opzioni":[],"allergeni":[],"etichette":[],"abbinamenti":[],"descrizione":"","disponibile":true,"prezzo_cent":2500,"immagine_url":null}],"descrizione":""}]}</script>
 <script>
 (() => {
-  const sfondo = document.querySelector(".scheda-sfondo"), foto = sfondo.querySelector(".scheda-foto");
-  const imposta = (sel, v) => { const el = sfondo.querySelector(sel); el.textContent = v || ""; el.hidden = !v; };
-  const apri = (art) => {
-    imposta("h3", art.dataset.nome); imposta(".scheda .prezzo", art.dataset.prezzo); imposta(".scheda .desc", art.dataset.desc);
-    imposta(".scheda .allergeni", art.dataset.allergeni ? "Allergeni: " + art.dataset.allergeni : "");
-    if (art.dataset.foto) { foto.src = art.dataset.foto; foto.alt = art.dataset.nome; foto.hidden = false; } else { foto.hidden = true; foto.removeAttribute("src"); }
-    sfondo.hidden = false; sfondo.querySelector(".scheda-chiudi").focus();
+  const D = JSON.parse(document.getElementById("dati").textContent);
+  const per = new Map();
+  D.categorie.forEach((c) => c.prodotti.forEach((p) => per.set(p.id, Object.assign({ categoria: c.id }, p))));
+  const TIPI = { rosso: "Rosso", bianco: "Bianco", rosato: "Rosato", bollicine: "Bollicine", dolce: "Dolce" };
+  const CORPI = { leggero: "Leggero", medio: "Equilibrato", strutturato: "Strutturato" };
+  const euro = (c) => new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(c / 100);
+  const sfondo = document.querySelector(".scheda-sfondo"), corpo = sfondo.querySelector(".scheda-corpo"), foto = sfondo.querySelector(".scheda-foto");
+  // Tutto il testo entra con textContent: niente HTML costruito da dati
+  const el = (tag, classe, testo) => { const e = document.createElement(tag); if (classe) e.className = classe; if (testo != null) e.textContent = testo; return e; };
+  const mostra = (nodi, url, alt) => {
+    corpo.replaceChildren(...nodi);
+    if (url) { foto.src = url; foto.alt = alt; foto.hidden = false; } else { foto.hidden = true; foto.removeAttribute("src"); }
+    sfondo.hidden = false; sfondo.querySelector(".scheda").scrollTop = 0; sfondo.querySelector(".scheda-chiudi").focus();
   };
-  const chiudi = () => { sfondo.hidden = true; };
+  const riga = (p, motivo, posizione) => {
+    const b = el("button", "quiz-vino");
+    if (posizione) b.append(el("span", "quiz-posizione", String(posizione)));
+    const d = el("span", "quiz-dati");
+    d.append(el("strong", null, p.nome));
+    if (p.vino) d.append(el("span", "quiz-info", [TIPI[p.vino.tipo], p.vino.regione, p.vino.vitigno].filter(Boolean).join(" · ")));
+    if (motivo) d.append(el("span", "quiz-perche", motivo));
+    b.append(d, el("span", "prezzo", euro(p.prezzo_cent)));
+    b.addEventListener("click", () => apri(p.id));
+    return b;
+  };
+  function apri(id) {
+    const p = per.get(id); if (!p) return;
+    const n = [], r = el("div", "riga"), v = p.vino;
+    r.append(el("h3", null, p.nome), el("span", "prezzo", euro(p.prezzo_cent))); n.push(r);
+    if (!p.disponibile) n.push(el("p", null, "Esaurito"));
+    if (v) {
+      n.push(el("p", "scheda-vino", [TIPI[v.tipo], CORPI[v.corpo], v.regione, v.vitigno].filter(Boolean).join(" · ")));
+      if (v.cantina || v.annata) n.push(el("p", "desc", [v.cantina, v.annata].filter(Boolean).join(", ")));
+      if (v.prezzo_bottiglia_cent) n.push(el("p", null, "Calice " + euro(p.prezzo_cent) + " · Bottiglia " + euro(v.prezzo_bottiglia_cent)));
+    }
+    if (p.descrizione) n.push(el("p", "desc", p.descrizione));
+    if (v && v.note) n.push(el("p", "desc", v.note));
+    if (p.allergeni && p.allergeni.length) n.push(el("p", "allergeni", "Allergeni: " + p.allergeni.join(", ")));
+    const ab = (p.abbinamenti || []).map((a) => ({ q: per.get(a.id), m: a.motivo })).filter((x) => x.q);
+    if (ab.length) { n.push(el("p", "quiz-passo", v ? "Ideale con" : "Il sommelier consiglia")); ab.forEach((x) => n.push(riga(x.q, x.m))); }
+    mostra(n, D.foto[p.id], p.nome);
+  }
+  function quiz() {
+    const vini = [...per.values()].filter((p) => p.vino && p.disponibile), stato = {};
+    const domanda = (passo, titolo, scelte, avanti) => {
+      const box = el("div", "quiz-scelte");
+      scelte.forEach(([etichetta, valore]) => { const b = el("button", "quiz-scelta", etichetta); b.addEventListener("click", () => avanti(valore)); box.append(b); });
+      mostra([el("p", "quiz-passo", "Domanda " + passo + " di 3"), el("h3", null, titolo), box], null, "");
+    };
+    const tipi = [...new Set(vini.map((v) => v.vino.tipo))];
+    domanda(1, "Che vino preferisci?", [...tipi.map((t) => [TIPI[t], t]), ["Sorprendimi", "sorpresa"]], (t) => { stato.tipo = t;
+      domanda(2, "Come lo vorresti?", [["Leggero e fresco", "leggero"], ["Equilibrato", "medio"], ["Strutturato e intenso", "strutturato"], ["Indifferente", "indifferente"]], (c) => { stato.corpo = c;
+        const cibo = D.categorie.filter((c) => c.prodotti.some((p) => !p.vino));
+        domanda(3, "Cosa mangerai?", [...cibo.map((c) => [c.nome, c.id]), ["Solo vino", null]], (x) => { stato.cibo = x; risultati(vini, stato); });
+      });
+    });
+  }
+  function risultati(vini, s) {
+    const O = ["leggero", "medio", "strutturato"];
+    const r = vini.map((v) => {
+      let pt = 0; const pq = [];
+      if (s.tipo !== "sorpresa" && v.vino.tipo === s.tipo) { pt += 3; pq.push(TIPI[v.vino.tipo] + ", come preferisci"); }
+      if (s.corpo !== "indifferente") { const d = Math.abs(O.indexOf(v.vino.corpo) - O.indexOf(s.corpo)); if (d === 0) { pt += 2; pq.push(CORPI[v.vino.corpo]); } else if (d === 1) pt += 1; }
+      const piatti = (v.abbinamenti || []).map((a) => per.get(a.id)).filter((p) => p && (!s.cibo || p.categoria === s.cibo));
+      if (piatti.length) { pt += Math.min(4, piatti.length * 2); pq.push("Si abbina a " + piatti.slice(0, 2).map((p) => p.nome).join(" e ")); }
+      return { v, pt, pq };
+    }).filter((x) => x.pt > 0 || s.tipo === "sorpresa").sort((a, b) => b.pt - a.pt).slice(0, 3);
+    const n = [el("p", "quiz-passo", "Il sommelier consiglia")];
+    if (!r.length) n.push(el("p", null, "Nessun vino corrisponde esattamente: chiedi al personale, saprà consigliarti."));
+    r.forEach((x, i) => n.push(riga(x.v, x.pq.join(" · "), i + 1)));
+    const b = el("button", "quiz-scelta", "Ricomincia"); b.addEventListener("click", quiz); n.push(b);
+    mostra(n, null, "");
+  }
   document.querySelectorAll(".apribile").forEach((art) => {
-    art.addEventListener("click", () => apri(art));
-    art.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); apri(art); } });
+    art.addEventListener("click", () => apri(art.dataset.id));
+    art.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); apri(art.dataset.id); } });
   });
+  const tv = document.querySelector(".trova-vino"); if (tv) tv.addEventListener("click", quiz);
+  const chiudi = () => { sfondo.hidden = true; };
   sfondo.addEventListener("click", (e) => { if (e.target === sfondo) chiudi(); });
   sfondo.querySelector(".scheda-chiudi").addEventListener("click", chiudi);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") chiudi(); });
+  // Aggiornamento rapido: se esiste una versione più recente del menu, ricarica scavalcando la cache (una sola volta per versione)
+  const controlla = () => fetch("versione.json?t=" + Date.now(), { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).then((j) => {
+    if (!j || !j.versione || j.versione === D.versione) return;
+    try { if (sessionStorage.getItem("menu-ricaricato") === j.versione) return; sessionStorage.setItem("menu-ricaricato", j.versione); } catch (e) {}
+    location.replace(location.pathname + "?v=" + encodeURIComponent(j.versione));
+  }).catch(() => {});
+  controlla();
+  setInterval(() => { if (document.visibilityState === "visible" && sfondo.hidden) controlla(); }, 30000);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") controlla(); });
 })();
 </script>
 </body>
